@@ -10,6 +10,8 @@ const DefaultLayout = () => {
                 <Link to='/' className="home-link"><h1>SITE LOGO/NAME</h1></Link>
             </header>
 
+            <h1>Lista dei Film</h1>
+
             <main>
                 <Outlet />
             </main>

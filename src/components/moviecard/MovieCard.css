@@ -1,0 +1,8 @@
+.card {
+    width: calc((100% - (24px * 2)) / 3);
+}
+
+img {
+    width: 100%;
+    height: 613px;
+}

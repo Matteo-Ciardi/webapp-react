@@ -17,7 +17,6 @@ const HomePage = () => {
 
     return (
         <div>
-            <h1>Lista dei Film</h1>
             <CardList
                 movies={movies}
             />
