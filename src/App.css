@@ -11,3 +11,8 @@ a {
     text-decoration: none;
     color: white;
 }
+
+ol,
+ul {
+    list-style-type: none;
+}
