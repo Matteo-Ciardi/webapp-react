@@ -8,7 +8,7 @@ const MovieCard = ({ movie }) => {
             <div className="card">
                 <div className="img-box">
                     <Link to={`/detailpage/${movie.id}`}>
-                        <img src={movie.image} />
+                        <img className='small-img' src={movie.image} />
                     </Link>
                 </div>
                 <div className="info">

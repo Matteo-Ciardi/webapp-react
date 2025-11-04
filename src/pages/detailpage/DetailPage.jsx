@@ -19,7 +19,7 @@ const DetailPage = () => {
     return (
         <div className="detail-page">
             <h1>{movie?.title}</h1>
-            <img src={movie?.image} alt={movie?.title} />
+            <img className="big-img" src={movie?.image} alt={movie?.title} />
             <p><strong>Regista:</strong> {movie?.director}</p>
             <p><strong>Anno:</strong> {movie?.release_year}</p>
 

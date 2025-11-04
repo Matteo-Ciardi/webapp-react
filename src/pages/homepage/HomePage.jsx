@@ -2,6 +2,8 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import CardList from "../../components/moviecardlist/CardList";
 
+import './HomePage.css'
+
 const HomePage = () => {
     const [movies, setMovies] = useState([]);
 
@@ -16,7 +18,8 @@ const HomePage = () => {
     useEffect(fecthMovies, []);
 
     return (
-        <div>
+        <div className="main-container">
+            <h1>Lista dei Film</h1>
             <CardList
                 movies={movies}
             />
