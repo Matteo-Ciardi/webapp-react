@@ -19,7 +19,6 @@ const HomePage = () => {
 
     return (
         <div className="main-container">
-            <h1>Lista dei Film</h1>
             <CardList
                 movies={movies}
             />

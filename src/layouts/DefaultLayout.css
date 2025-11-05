@@ -1,8 +1,15 @@
 /* HEADER */
 header {
-    background-color: black;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     padding: 20px;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    position: fixed;
+    width: 100vw;
+    z-index: 1000;
+}
+
+main {
+    padding-top: 90px;
 }

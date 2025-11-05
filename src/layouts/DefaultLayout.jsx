@@ -7,7 +7,7 @@ const DefaultLayout = () => {
     return (
         <>
             <header>
-                <Link to='/' className="home-link"><h1>SITE LOGO/NAME</h1></Link>
+                <Link to='/' className="home-link"><h1>CINEBOOL01</h1></Link>
             </header>
 
             <main>
