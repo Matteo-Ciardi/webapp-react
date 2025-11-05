@@ -13,10 +13,10 @@ const ReviewForm = ({ idProp, reloadReviews }) => {
 
     const setFieldValue = e => {
         const { value, name } = e.target;
-        setFormData8({ ...formData, [name]: value })
+        setFormData({ ...formData, [name]: value })
     }
 
-    const apiUrl = `http://localhost:3000/api/movies/${idProp}/reviews`;
+    const apiUrl = `http://localhost:3000/movies/${idProp}/reviews`;
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -30,7 +30,7 @@ const ReviewForm = ({ idProp, reloadReviews }) => {
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className='name-field'>
                 <label>Nome:</label>
                 <input type='text' name='name' value={formData.name} onChange={setFieldValue} />
@@ -38,7 +38,12 @@ const ReviewForm = ({ idProp, reloadReviews }) => {
 
             <div className='review-field'>
                 <label>Recensione:</label>
-                <textarea className='revie-field' name='text' value={formData.text} onChange={setFieldValue} />
+                <textarea name='text' value={formData.text} onChange={setFieldValue} />
+            </div>
+
+            <div className='vote-field'>
+                <label>Voto:</label>
+                <input name='vote' type='number' min="1" max="5" value={formData.vote} onChange={setFieldValue} />
             </div>
 
             <button type='submit'>INVIA</button>

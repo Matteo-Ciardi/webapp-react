@@ -9,7 +9,7 @@ import ReviewCard from '../../components/reviewcard/ReviewCard';
 
 const DetailPage = () => {
     const { id } = useParams();
-    const [movie, setMovie] = useState([]);
+    const [movie, setMovie] = useState();
 
     const redirect = useNavigate();
 

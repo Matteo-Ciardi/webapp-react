@@ -3,13 +3,11 @@ const ReviewCard = ({ reviewProp }) => {
 
     return (
         <div>
-            <div>
-                <p>
-                    {text}
-                </p>
-                <strong>Vote: {vote}</strong>
-                <address>By {name}</address>
-            </div>
+            <p>
+                {text}
+            </p>
+            <strong>Vote: {vote}</strong>
+            <address>By {name}</address>
         </div>
     )
 }
