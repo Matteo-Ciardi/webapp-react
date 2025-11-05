@@ -13,10 +13,8 @@ const MovieCard = ({ movie }) => {
                 </div>
                 <div className="info">
                     <ul key={movie.id}>
-                        <li>
-                            <Link to={`/movies/${movie.id}`}>
-                                <strong>{movie.title}</strong>
-                            </Link>
+                        <li className='movie-title'>
+                            <strong>{movie.title}</strong>
                         </li>
                         <li>
                             {movie.director}
