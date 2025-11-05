@@ -18,24 +18,28 @@ const DetailPage = () => {
 
     return (
         <div className="detail-page">
-            <h1>{movie?.title}</h1>
-            <img className="big-img" src={movie?.image} alt={movie?.title} />
-            <p><strong>Regista:</strong> {movie?.director}</p>
-            <p><strong>Anno:</strong> {movie?.release_year}</p>
+            <div>
+                <h1>{movie?.title}</h1>
+                <img className="big-img" src={movie?.image} alt={movie?.title} />
+                <p><strong>Regista:</strong> {movie?.director}</p>
+                <p><strong>Anno:</strong> {movie?.release_year}</p>
+            </div>
 
-            <h2>Recensioni</h2>
-            {movie.reviews && movie.reviews.length > 0 ? (
-                <ul>
-                    {movie.reviews.map((review) => (
-                        <li key={review.id}>
-                            <p><strong>{review.name}</strong> ({review.vote}/10)</p>
-                            <p>{review.text}</p>
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p>Nessuna recensione disponibile.</p>
-            )}
+            <div>
+                <h2>Recensioni</h2>
+                {movie.reviews && movie.reviews.length > 0 ? (
+                    <ul>
+                        {movie.reviews.map((review) => (
+                            <li key={review.id}>
+                                <p><strong>{review.name}</strong> ({review.vote}/10)</p>
+                                <p>{review.text}</p>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>Nessuna recensione disponibile.</p>
+                )}
+            </div>
         </div>
     );
 }
