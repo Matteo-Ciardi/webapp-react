@@ -5,6 +5,7 @@ import axios from 'axios';
 import ReviewForm from '../../components/reviewform/ReviewForm';
 
 import './DetailPage.css'
+import ReviewCard from '../../components/reviewcard/ReviewCard';
 
 const DetailPage = () => {
     const { id } = useParams();
@@ -28,9 +29,7 @@ const DetailPage = () => {
     const renderReview = () => {
         return movie?.reviews.map(review => {
             return (
-                <>
-                    
-                </>
+                <ReviewCard reviewProp={review} key={review.id} />
             )
         })
     }
@@ -46,18 +45,10 @@ const DetailPage = () => {
 
             <div>
                 <h2>Recensioni</h2>
-                {movie.reviews && movie.reviews.length > 0 ? (
-                    <ul>
-                        {movie.reviews.map((review) => (
-                            <li key={review.id}>
-                                <p><strong>{review.name}</strong> ({review.vote}/10)</p>
-                                <p>{review.text}</p>
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    <p>Nessuna recensione disponibile.</p>
-                )}
+                {renderReview()}
+            </div>
+            <div>
+                <ReviewForm idProp={id} reloadReviews={fetchMovie} />
             </div>
         </div>
     );
