@@ -36,19 +36,26 @@ const DetailPage = () => {
 
     return (
         <div className="detail-page">
-            <div>
-                <h1>{movie?.title}</h1>
-                <img className="big-img" src={movie?.image} alt={movie?.title} />
-                <p><strong>Regista:</strong> {movie?.director}</p>
-                <p><strong>Anno:</strong> {movie?.release_year}</p>
+            <div className='detail-movie-card'>
+                <div className='detail-title'>
+                    <h1>{movie?.title}</h1>
+                </div>
+                <div className='detail-bg'>
+                    <img className="big-img" src={movie?.image} alt={movie?.title} />
+
+                    <div className='detail-info'>
+                        <p><strong>Regista:</strong> {movie?.director}</p>
+                        <p><strong>Anno:</strong> {movie?.release_year}</p>
+                    </div>
+                </div>
             </div>
 
             <div>
-                <h2>Recensioni</h2>
+                <h2 className='review-title'>Recensioni</h2>
                 {renderReview()}
-            </div>
-            <div>
-                <ReviewForm idProp={id} reloadReviews={fetchMovie} />
+                <div>
+                    <ReviewForm idProp={id} reloadReviews={fetchMovie} />
+                </div>
             </div>
         </div>
     );

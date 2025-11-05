@@ -1,0 +1,17 @@
+.review-bg {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+
+    margin: 20px 0 0 20px;
+    padding: 10px;
+}
+
+.review-square {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    width: 90px;
+}
