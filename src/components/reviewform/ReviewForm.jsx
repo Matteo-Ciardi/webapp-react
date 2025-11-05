@@ -2,7 +2,7 @@ import axios from 'axios'
 
 import { useState } from 'react'
 
-const reviewForm = ({ idProp, reloadReviews }) => {
+const ReviewForm = ({ idProp, reloadReviews }) => {
     const defaultValues = {
         name: "Anonymus",
         text: "",
@@ -46,4 +46,4 @@ const reviewForm = ({ idProp, reloadReviews }) => {
     )
 }
 
-export default reviewForm
+export default ReviewForm

@@ -1,6 +1,8 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+
+import ReviewForm from '../../components/reviewform/ReviewForm';
 
 import './DetailPage.css'
 
@@ -8,13 +10,30 @@ const DetailPage = () => {
     const { id } = useParams();
     const [movie, setMovie] = useState([]);
 
-    useEffect(() => {
+    const redirect = useNavigate();
+
+    const fetchMovie = () => {
         axios.get(`http://localhost:3000/movies/${id}`)
             .then(response => {
                 setMovie(response.data);
             })
-            .catch(error => console.log(error));
-    }, [id]);
+            .catch(error => {
+                console.log(error)
+                if (error.status === 404) redirect('/404')
+            })
+    }
+
+    useEffect(fetchMovie, []);
+
+    const renderReview = () => {
+        return movie?.reviews.map(review => {
+            return (
+                <>
+                    
+                </>
+            )
+        })
+    }
 
     return (
         <div className="detail-page">
