@@ -1,0 +1,45 @@
+input {
+    padding: 2px 4px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+textarea {
+    padding: 2px 4px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.name-field {
+    margin-bottom: 20px;
+}
+
+.name-label {
+    margin-right: 10px;
+}
+
+.review-label {
+    margin-right: 10px;
+}
+
+.review-field {
+    margin-bottom: 20px;
+}
+
+.vote-label {
+    margin-right: 10px;
+}
+
+.send-btn {
+    margin-top: 20px;
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -53,9 +53,10 @@ const DetailPage = () => {
             <div>
                 <h2 className='review-title'>Recensioni</h2>
                 {renderReview()}
-                <div>
-                    <ReviewForm idProp={id} reloadReviews={fetchMovie} />
-                </div>
+            </div>
+            <div>
+                <h2 className='add-review-title'>Aggiungi recensione</h2>
+                <ReviewForm idProp={id} reloadReviews={fetchMovie} />
             </div>
         </div>
     );

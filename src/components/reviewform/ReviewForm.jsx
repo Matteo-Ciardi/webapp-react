@@ -2,9 +2,11 @@ import axios from 'axios'
 
 import { useState } from 'react'
 
+import './ReviewForm.css'
+
 const ReviewForm = ({ idProp, reloadReviews }) => {
     const defaultValues = {
-        name: "Anonymus",
+        name: "",
         text: "",
         vote: 1
     }
@@ -32,21 +34,21 @@ const ReviewForm = ({ idProp, reloadReviews }) => {
     return (
         <form onSubmit={handleSubmit}>
             <div className='name-field'>
-                <label>Nome:</label>
+                <label className='name-label'>Nome:</label>
                 <input type='text' name='name' value={formData.name} onChange={setFieldValue} />
             </div >
 
             <div className='review-field'>
-                <label>Recensione:</label>
+                <label className='review-label'>Recensione:</label>
                 <textarea name='text' value={formData.text} onChange={setFieldValue} />
             </div>
 
             <div className='vote-field'>
-                <label>Voto:</label>
+                <label className='vote-label'>Voto:</label>
                 <input name='vote' type='number' min="1" max="5" value={formData.vote} onChange={setFieldValue} />
             </div>
 
-            <button type='submit'>INVIA</button>
+            <button className='send-btn' type='submit'>INVIA</button>
         </form>
     )
 }
