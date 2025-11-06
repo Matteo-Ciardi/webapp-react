@@ -1,9 +1,14 @@
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useGlobal } from "../context/DefaultContext";
+
+import Loader from "../components/loader/Loader";
 
 import './DefaultLayout.css'
 
 const DefaultLayout = () => {
+    const { isLoading } = useGlobal();
+
     return (
         <>
             <header>
@@ -13,6 +18,8 @@ const DefaultLayout = () => {
             <main>
                 <Outlet />
             </main>
+
+            {isLoading && <Loader />}
         </>
     )
 }
