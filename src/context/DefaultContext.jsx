@@ -6,19 +6,19 @@ function DefaultProvider({ children }) {
     const [isLoading, setIsLoading] = useState(false);
 
     return (
-        <DefaultProvider.Provider
+        <DefaultContext.Provider
             value={{
                 isLoading,
                 setIsLoading
             }}
         >
             {children}
-        </DefaultProvider.Provider>
+        </DefaultContext.Provider>
     );
 }
 
 function useGlobal() {
-    const context = useContext(GlobalContext);
+    const context = useContext(DefaultContext);
     return context;
 }
 

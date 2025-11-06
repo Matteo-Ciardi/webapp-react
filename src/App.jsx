@@ -5,18 +5,21 @@ import HomePage from './pages/homepage/HomePage'
 import DetailPage from './pages/detailpage/DetailPage'
 
 import './App.css'
+import { DefaultProvider } from './context/DefaultContext'
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<DefaultLayout />}>
-            <Route index element={<HomePage />} />
-            <Route path="/detailpage/:id" element={<DetailPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <DefaultProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<DefaultLayout />}>
+              <Route index element={<HomePage />} />
+              <Route path="/detailpage/:id" element={<DetailPage />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </DefaultProvider>
     </>
   )
 }

@@ -1,19 +1,23 @@
-import { useNavigate, useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react';
 import axios from 'axios';
 
+import { useNavigate, useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react';
+import { useGlobal } from '../../context/DefaultContext';
+
 import ReviewForm from '../../components/reviewform/ReviewForm';
+import ReviewCard from '../../components/reviewcard/ReviewCard';
 
 import './DetailPage.css'
-import ReviewCard from '../../components/reviewcard/ReviewCard';
 
 const DetailPage = () => {
     const { id } = useParams();
     const [movie, setMovie] = useState();
 
+    const { setiIsLoading } = useGlobal();
     const redirect = useNavigate();
 
     const fetchMovie = () => {
+        setiIsLoading
         axios.get(`http://localhost:3000/movies/${id}`)
             .then(response => {
                 setMovie(response.data);
@@ -22,6 +26,7 @@ const DetailPage = () => {
                 console.log(error)
                 if (error.status === 404) redirect('/404')
             })
+            .finally(() => { setIsLoading(false) })
     }
 
     useEffect(fetchMovie, []);
